@@ -26,7 +26,7 @@ export const visitController = async (req: IncomingMessage, res: ServerResponse)
         res.writeHead(201, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ success: true, visitId }));
       } catch (error) {
-        console.log('test')
+        console.log(error)
       }
     });
   } else {
