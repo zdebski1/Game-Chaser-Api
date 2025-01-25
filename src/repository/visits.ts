@@ -19,5 +19,5 @@ export const findStadiumById = async (stadiumId: number): Promise<boolean> => {
     [stadiumId]
   );
 
-  return rows.length > 0;
+  return Array.isArray(rows) && rows.length > 0;  // Ensure that rows is an array
 };

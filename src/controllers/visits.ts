@@ -1,6 +1,5 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import { createVisit } from '../services/visits';
-import { handleError } from '../utils/errorHandler';
 
 export const visitController = async (req: IncomingMessage, res: ServerResponse) => {
   if (req.method === 'POST' && req.url === '/visits') {
@@ -27,7 +26,7 @@ export const visitController = async (req: IncomingMessage, res: ServerResponse)
         res.writeHead(201, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ success: true, visitId }));
       } catch (error) {
-        handleError(res, error);
+        console.log('test')
       }
     });
   } else {

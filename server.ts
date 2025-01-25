@@ -1,5 +1,5 @@
 import http from 'http';
-import { visitController } from '../controllers/visits';
+import { visitController } from './src/controllers/visits';
 
 const server = http.createServer((req, res) => {
   if (req.url?.startsWith('/visits')) {
