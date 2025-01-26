@@ -1,5 +1,5 @@
 import fastify from 'fastify';
-import { createVisitController } from './src/controllers/visits';
+import { createVisitController } from './src/controllers/visit';
 import { returnStadiumController } from './src/controllers/stadium';
 
 const app = fastify();

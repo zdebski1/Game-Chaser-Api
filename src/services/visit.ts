@@ -1,6 +1,6 @@
-import { insertVisit } from '../repository/visits';
+import { insertVisit } from '../repository/visit';
 import { findStadiumById } from '../repository/stadium';
-import { Visit } from '../models/visits';
+import { Visit } from '../models/visit';
 import { Stadium } from '../models/stadium';
 
 export const createVisit = async (

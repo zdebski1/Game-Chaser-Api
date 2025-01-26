@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { Visit } from '../models/visits';
-import { createVisit } from '../services/visits';
+import { Visit } from '../models/visit';
+import { createVisit } from '../services/visit';
 
 export const createVisitController = async (
   req: FastifyRequest<{ Body: Omit<Visit, 'visitid' | 'isdeleted'> }>,

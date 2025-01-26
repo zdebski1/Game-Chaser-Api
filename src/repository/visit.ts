@@ -1,5 +1,5 @@
 import db from '../config/knex';
-import { Visit } from '../models/visits';
+import { Visit } from '../models/visit';
 
 export const insertVisit = async (visitData: Omit<Visit, 'visitid'| 'isdeleted'>): Promise<number> => {
   const result = await db('dbo.visit')
