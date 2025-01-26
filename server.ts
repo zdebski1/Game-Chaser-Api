@@ -1,11 +1,11 @@
 import fastify from 'fastify';
-import { createVisitController } from './src/controllers/visit';
-import { returnStadiumController } from './src/controllers/stadium';
+import { createVisitController } from './src/controllers/createVisitController';
+import { getStadiumController } from './src/controllers/getStadiumController';
 
 const app = fastify();
 
 app.post('/visits', createVisitController);
-app.get('/stadium', returnStadiumController);
+app.get('/stadium', getStadiumController);
 
 app.listen({ port: 3000 }, (err, address) => {
   if (err) {

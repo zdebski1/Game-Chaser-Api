@@ -2,7 +2,7 @@ import { FastifyRequest, FastifyReply } from 'fastify';
 import { Stadium } from '../models/stadium';
 import { returnStadium } from '../services/stadium';
 
-export const returnStadiumController = async (
+export const getStadiumController = async (
   _req: FastifyRequest,
   res: FastifyReply
 ) => {
