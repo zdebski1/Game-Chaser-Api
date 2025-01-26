@@ -2,8 +2,9 @@ import db from '../config/knex';
 import { Stadium } from '../models/stadium';
 
 export const findStadiumById = async (stadiumid: Stadium['stadiumid']): Promise<boolean> => {
+  const columns = Object.keys(stadiumid);
   const result = await db('tlkp.stadium')
-    .select(1)
+    .select(columns)
     .where('stadiumid', stadiumid)
     .limit(1);
 
@@ -12,6 +13,7 @@ export const findStadiumById = async (stadiumid: Stadium['stadiumid']): Promise<
 
 export const findAllStadium = async (stadium: Omit<Stadium, 'stadiumid'| 'insertdate'|'insertby'>): Promise<Stadium[]> => {
   const columns = Object.keys(stadium);
-  const result = await db('tlkp.stadium').select(columns);
+  const result = await db('tlkp.stadium')
+    .select(columns);
   return result;
 };
