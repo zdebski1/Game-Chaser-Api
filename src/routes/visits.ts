@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify';
-import { visitController } from '../controllers/visits';
+import { createVisitController } from '../controllers/visits';
 
 export async function visitRoutes(app: FastifyInstance) {
-  app.post('/visits', visitController);
+  app.post('/visits', createVisitController);
 }

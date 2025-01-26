@@ -1,0 +1,1 @@
+{"version":3,"file":"stadium.d.ts","sourceRoot":"","sources":["../../src/models/stadium.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,OAAO;IACpB,SAAS,EAAE,MAAM,CAAC;IAClB,WAAW,EAAE,MAAM,CAAC;IACpB,WAAW,EAAE,MAAM,CAAC;IACpB,eAAe,EAAE,MAAM,CAAC;IACxB,gBAAgB,EAAE,MAAM,CAAC;IACzB,eAAe,EAAE,MAAM,CAAC;IACxB,UAAU,EAAE,IAAI,GAAG,IAAI,CAAC;IACxB,QAAQ,EAAE,MAAM,CAAC;CAClB"}
