@@ -9,12 +9,19 @@ export const createVisitController = async (
   try {
     const { stadiumid, createby } = req.body;
 
-    if (!stadiumid || !createby) {
+    if (!createby) {
       return res.status(400).send({
         success: false,
-        message: 'stadiumid and createby are required.',
+        message: 'createby is required.',
       });
     }
+
+    if (!stadiumid) {
+      return res.status(400).send({
+        success: false,
+        message: 'stadiumid is required.',
+      });
+    }    
 
     const visitId = await createVisit(
       {
