@@ -11,3 +11,11 @@ export const insertVisit = async (visitData: Omit<Visit, 'visitid'| 'isdeleted'>
 
   return result[0].visitid;
 };
+
+
+
+export const returnVisits = async (): Promise<Visit[]> => {
+  const result = await db('dbo.visit');
+
+  return result as Visit[];
+};

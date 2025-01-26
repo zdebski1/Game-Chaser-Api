@@ -1,14 +1,14 @@
-import http from 'http';
+import fastify from 'fastify';
 import { visitController } from './src/controllers/visits';
 
-const server = http.createServer((req, res) => {
-  if (req.url?.startsWith('/visits')) {
-    visitController(req, res);
-  } else {
-    res.writeHead(404, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: 'Not Found' }));
-  }
-});
+const app = fastify();
 
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.post('/visits', visitController);
+
+app.listen({ port: 3000 }, (err, address) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  console.log(`Server is running on ${address}`);
+})
