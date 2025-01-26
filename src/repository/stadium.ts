@@ -9,3 +9,9 @@ export const findStadiumById = async (stadiumid: Stadium['stadiumid']): Promise<
 
   return result.length > 0;
 };
+
+export const findAllStadium = async (stadium: Omit<Stadium, 'stadiumid'| 'insertdate'|'insertby'>): Promise<Stadium[]> => {
+  const columns = Object.keys(stadium);
+  const result = await db('tlkp.stadium').select(columns);
+  return result;
+};
