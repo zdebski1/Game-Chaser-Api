@@ -1,7 +1,7 @@
 import db from '../config/knex';
 import { Stadium } from '../models/stadium';
 
-export const findStadiumById = async (stadiumid: Stadium['stadiumid']): Promise<boolean> => {
+export const stadiumByIdExists = async (stadiumid: Stadium['stadiumid']): Promise<boolean> => {
   const columns = Object.keys(stadiumid);
   const result = await db('tlkp.stadium')
     .select(columns)
